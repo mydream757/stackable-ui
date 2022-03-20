@@ -1,9 +1,19 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.tsx',
+    devServer: {
+        host: 'localhost',
+        hot: true,
+        liveReload: true,
+        open: true,
+        port: 3000
+    },
     devtool: 'inline-source-map',
+    entry: './src/index.tsx',
     mode: "development",
     module: {
         rules: [
@@ -12,29 +22,25 @@ module.exports = {
                 use: ["style-loader", "css-loader"]
             },
             {
-                test: /\.tsx?$/,
                 exclude: /node_modules/,
-                loader: 'ts-loader'
+                loader: 'ts-loader',
+                test: /\.tsx?$/
             },
         ],
-    },
-    resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
     },
-    devServer: {
-        host: 'localhost',
-        open: true,
-        port: 3000,
-        hot: true,
-        liveReload: true
-    },
     plugins: [
         new HtmlWebpackPlugin({
             template: './public/index.html'
         })
-    ]
+    ],
+    resolve: {
+        alias: {
+            'src': path.resolve(__dirname, './src')
+        },
+        extensions: ['.tsx', '.ts', '.js'],
+    },
 };
