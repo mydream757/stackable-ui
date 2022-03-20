@@ -10,6 +10,7 @@ export default {
 export const ButtonExample: ComponentStory<typeof Button> = () => (
   <Button
     title="테스트"
+    color={'BasicDarkBlue'}
     onClick={() => {
       console.log('hello, storybook!');
     }}
