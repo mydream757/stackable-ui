@@ -5,7 +5,7 @@ import {
   ButtonColorType,
   ButtonCommonStyle,
 } from 'src/components/atoms/button/Button.style';
-import { Length } from 'src/config/types/length';
+import Length from 'src/config/types/length';
 
 export interface ButtonProps {
   className?: string;

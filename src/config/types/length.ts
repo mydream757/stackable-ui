@@ -6,7 +6,7 @@ export type VerticalHeight = `${number}vh`;
 export type VerticalWidth = `${number}vw`;
 export type AbstractLength = 'auto' | 'inherit';
 
-export type Length =
+type Length =
   | Pixel
   | Percent
   | Em
@@ -14,3 +14,5 @@ export type Length =
   | VerticalHeight
   | VerticalWidth
   | AbstractLength;
+
+export default Length;
