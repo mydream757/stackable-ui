@@ -7,11 +7,10 @@ export const ButtonCommonStyle: SerializedStyles = css`
   border: none;
   box-sizing: content-box;
   font-weight: 500;
-  .button-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ButtonColorStyleSet = {
