@@ -8,4 +8,8 @@ export default {
 
 export const ButtonExample: ComponentStory<typeof Button> = (
   props: ButtonProps
-) => <Button {...props}>{'Continue'}</Button>;
+) => (
+  <Button {...props} width={'200px'}>
+    {'Continue'}
+  </Button>
+);
